@@ -1,0 +1,26 @@
+"nodeId": "c473196a-9f93-44df-b71c-cd96c0f5fdac"
+
+
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0
+rootdir: /home/ubuntu
+collected 1 item                                                                                                                       
+
+new_0.py Commands related to skill
+
+Usage:
+  chef-node-management-cli management skill [command]
+
+Available Commands:
+  create-skill    Add a skill definition
+  delete-skill    Deletes a skill definition
+  find-all-skills List the skill definitions under node management
+  find-one-skill  Get skill definition
+  modify-skill    Modify a skill definition
+  update-agent    Register/Update node management agent skill along with the default settings.
+
+Flags:
+  -h, --help   help for skill
+
+Use "chef-node-management-cli management skill [command] --help" for more information about a command.
+
+.

@@ -1,0 +1,158 @@
+@app.route('/submit', methods=['POST'])
+def submit_data():
+    # Get JSON data from the request
+    items.append(data)
+    data = request.get_json()
+    
+    # Here you can process the data as needed, for example, save it or modify it
+    # For this example, we'll just echo back the received data with a success message
+    response = {
+        "message": "Data received successfully!",
+        
+    }
+    return jsonify(response),201
+@app.route('/dele',methords=['DELETE'])
+def delete_data():
+    data=
+
+    
+items={
+        "name":"Pencil",
+        "price":20
+    }
+
+
+
+from flask import Flask,jsonify,request
+import json
+
+app = Flask(__name__)
+@app.route('/', methods=['GET'])
+def hello_world():
+    with open('data.json', 'r') as json_file:
+        data= json.load(json_file)
+    
+    return jsonify(data)
+
+@app.route("/add",methods=["POST"])
+def add():
+    with open('data.json', 'w') as json_file:
+        data= json.load(json_file)
+        item=request.get_json()
+        data.append(item) 
+        return jsonify(item)
+    
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+{
+"bldrUrl": "https://bldr.habitat.sh",
+"bldrChannel": "stable",
+"bldrAuthToken": "",
+"nodeCheckinInterval": 3600,
+"updateSkillMetadataInterval": 3600,
+"logLevel": "debug"
+}
+
+
+
+"skillAssemblyId": "bef4fa32-a14f-45d8-8434-b999de0e1b1d"
+"settingId": "57c0e752-c502-4b51-950e-f32db89421f5"
+
+{
+  "name": "node-cohort-mchef",
+  "description": "Description first cohort",
+  "settingId": "57c0e752-c502-4b51-950e-f32db89421f5",
+  "skillAssemblyId":"bef4fa32-a14f-45d8-8434-b999de0e1b1d"
+}
+
+"cohortId": "2e068be4-cb75-44c1-84e9-fb35f4f2d727"
+
+{
+    "cohortId": "2e068be4-cb75-44c1-84e9-fb35f4f2d727",
+    "url": "ec2-52-90-252-4.compute-1.amazonaws.com",
+    "sshCredentials": {
+        "username": "",
+        "key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA4/cn6qAIXZ7LlHgnGoXPzCCPoVR+pnaOtHm9hqpMJDBvBMYK\nwGyaCkMUQkjOGpUa5f7lqHDKs6qmoMDszREVdtniitm6faD8vqpxQS1bG/BWkkxH\nW9MkWt86nBd/HnK3rVxYTB+KodF3r6x85Ala1T4H9LrFr/6EVRyH5lSv+mbNRlS6\n4hLe+XH+l6YlHHcj/iloBvoNCSxRnqH6jHvDQ5bmNLD/bk/Ji0N15fnccAr9JGxy\nDCIil1Iz/SwQdBrKoDH3mS9MRgtZLxOsYAeThUBZ5eZ4f7SDM9THvsHLp7DScaoJ\nSXntGRJqJrfIU85wikUx/fiKnOPZRI8Z6v36/QIDAQABAoIBABOYDc1D3hQ17uef\nADVuZPL1pYLHYW9rZ06p3Bl0D8FYjGJLp2bsrrzNETO1UEnGoR49r32v3CxfMZ1F\nl9T0b/TcO3WVy0q7CJ5Wxg9FF7yqBrbiaYvB9TD+WOpLtrhmQdVbx5cbau4HtBLc\nb4umJjGH+GUXnKBI7xTls+SfSNTr0Y1nFr2FeceHFwW15kY7CsbSmihYhynmLmtH\nZNVUDP6LuYf0Nw0yXv614iOaqpxHG59j/mY0qaJNAWeiPc9sk4AE3irbOaXJD2N6\nnagX/D9WEFRVmuT2+HgKWpGiouARZ9DJSoYTxCDedh3MCApBJZREgbvZ6CZJpFO6\nABqcOv0CgYEA/HzjQW7bAKsHRykIEViRz4O4jzWUtJY4/sKiaYU6ao6VM4m4/NtJ\nT/U0dbExEXNFeviq89tgOd3yrm+WZbUYJ2UunOUAmOsiHpinIu+ZAeOe0UrLL53U\ntm7TYhpTK8dadau0x6GVUB7T0X7I1IF4Qof/vWLHoqR9+i8KVJoQPL8CgYEA5yLx\nlN88FMvmiH61hz0h9IwC6a5TU1bwlRlzUEec3G3lSlZb5rJo25xKULcWlmiJtJgG\n2pL26C4v3Jl2VYyXtJwGTMOpbbsLK2JL8hH3B3Wf6alVlQZUE+SNqaF4AjxmLt0V\n33mGQch0LanKPTRm0hjmVgEk0Tz8c/7TckH2K0MCgYEAvRrYpsBdfNGb4NtFdKBu\njQrt5yzNVLgSthSWyguD5h0meHRVPeULsrxHb0KoKpa4WlL2zy/mkVC/m5BuB30s\nOw1YbSBDY0TwyBOzUsI7SiPuZnjrV52RnJXC8n4e/vIPuYRCISbPizObmBOqXScf\nKE1t6K2cMh+bTw9+YEEHmkcCgYAf2cHemPCHkR2Ae616KGNwdobEOuCCoH1gnnQ0\ngNnNylsJZmMdpEIs2Rmoi8JSEa/AMh7nqc7aadrwlDkpSslw+vsnQuMrGtZMMSxz\n/CPFZGEX6ty/P3MAlsMqt/R4omgWVyL3e6CTmhLgZABZdMoic4nyGhA/wR6swVXT\n7eEFTwKBgQDvcQ1c7m71zPzGoFYpZIuXCB+ICYR15+M8sPJzZXeUkJtoT1ALe9il\nEkLTXBkNBmTiPR+km4Y0i6vyxkq5szXivHpGyMGOwcKgOorEFtagunzmUPWI4EIn\nMXiJ0aHCVONiMMW9kEms7OICEX97AF/QwfFt4Be/UIrv1jnMcO8zsg==\n-----END RSA PRIVATE KEY-----\n",
+        "port": 22
+    }
+}
+
+"nodeId": "1d5f9f99-1653-4e09-8da4-609055e27349"
+
+
+
+"nodeId": "c473196a-9f93-44df-b71c-cd96c0f5fdac"
+
+
+
+
+
+{
+  "name": "a simple job to perform one action",
+  "description": "Perform a simple shell command on specific nodes to understand the fundamentals of Courier jobs",
+  "scheduleRule": "immediate",
+  "exceptionRules": [],
+  "target": {
+    "executionType": "sequential",
+    "groups":[
+      {
+        "timeoutSeconds": 240,
+        "batchSize": {},
+        "distributionMethod": "batching",
+        "successCriteria": [
+          {
+            "numRuns": { "type": "percent", "value": 100 },
+            "status": "success"
+          }
+        ],
+        "nodeListType":"nodes",
+        "nodeIdentifiers":[
+          "c473196a-9f93-44df-b71c-cd96c0f5fdac"
+        ]
+      }
+    ]
+  },
+  "actions": {
+    "accessMode": "agent",
+    "steps":
+    [
+      {
+        "name": "step to sleep",
+        "interpreter": {
+          "skill": {
+            "minVersion": "1.0.0"
+          },
+          "name": "chef-platform/shell-interpreter"
+        },
+        "command": {
+          "linux": [
+            "sleep 10"
+          ],
+          "windows": [
+            "timeout 10"
+          ]
+        },
+        "inputs": {},
+        "expectedInputs": { },
+        "outputFieldRules": {},
+        "retryCount": 2,
+        "failureBehavior": {
+          "action": "retryThenFail",
+          "retryBackoffStrategy": {
+            "type": "linear",
+            "delaySeconds": 1,
+            "arguments": [1,3,5]
+          }
+        },
+        "limits": {},
+        "conditions": []
+      }
+    ]
+  }
+}
+

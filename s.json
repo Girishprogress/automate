@@ -1,0 +1,73 @@
+{
+    "cohortId": "48f7d5f9-2cda-47d9-8100-3deb9cab42e5",
+    "url": "ec2-34-230-59-52.compute-1.amazonaws.com",
+    "sshCredentials": {
+        "username": "ubuntu",
+        "key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpQIBAAKCAQEAvmp0hBNAvIapv1GW5tShccg1mirBeC/O6KN7YO/0I2iTVHU1\nL3BC6WaWaYvRNSjaR3D/Rsk7R1wV7fS9Xpaj8ai1sr0ikQCseVidETTOsCHnmbx6\nyi7m/C2yhI63XkjSTI8lxwN5DPHZd6ibvkqhs/TLSjLMk9OUw8V85ynRQNURRWuJ\nu0CDBREVB18hQilqJ3qfzCv0iIgGXV4sVX4sUEBqZ+D5m+43lCVqQ+eYcWDcgjWo\nCwi2Rfc7eb8QR+v7H9YW4qW/OhJh3DdwrtGqdjo5dGu2SMg4EgTbifdawZTl4Yon\nDVj5NjSGKjLzwcjmf323N9oRXY1++ZJ9PrVcLwIDAQABAoIBAQCzZfaqrLz0Iedx\nsfv7NF96pMcjnZ6zjk9hTQ0j0k7wwUj1bIwUSq8v2RBjFnCfpgKpBmPsHBE2dSLQ\nEyILKOADARFW+ezEMp9MoFky6c7FkNv0Muh47mF/O8qSKyfFs9Q2fzN3YeU9deqO\nWxOI4CWjN0IEgQHPUKs7GyhHXlWgvr1AqviH/jWaq7hAvtHwuvFh+BDOMLIxSiEz\n1Bk12Pg0ufkHYxjfOkYGjmZEfqHrELuJCt8SaAAvmVZsbt2nATt5DmNLlRKcRCx3\nugYjoEU2FOaNiTpKukCVTmg5OdF69UXsVzlTn2IDW3u3Wdf2zjNudG1P6RWQmA6W\nBpl+6aH5AoGBAN6t49ZbHenB6VDzWVcJTjYqZqklG8FpbZAX0waYEx5FSScD6Jo+\n2EwJ0NUuCsGqgtQZtsdkYC9XHmbhVKhOC87J/xCMjKuVMEve0i+PBa49GVmzFVke\n0SRUpagKC93xijCdYQykFeUIRIUJdfxV300H4avSNzn4SRtq1Ua3vf5NAoGBANro\nqOS2zlTILU4vv0ddf/WwnCFQkulmaAmPvZnY2zGb9TZCJEuJIx2zTNzzLlp6fEYi\n0rgdFBc0uiH7pZdWW9UTW6ki+JdjfwMc9ScyL+kkM+GXErV1iagQR/scPVHuPjDE\nbFiDChi3Yd9Gmh4KJJsHD35DTPyHfIFiWKGG+VprAoGAZDax0KhU//xquimqTUc8\n0Zend/vhT9vYmP5/0/ngsMDRuSNDLReXVDEesLH12U6ZbkbcQUPlHakBX5+M7+mf\n2sKBbbszG40anSp8QTcGgXGx1PKJawA5czY9DzDmQk4PuO063euChv5/h7fIR3WF\n9y7S2vbSL96TWCluLlNGyAkCgYEAzasLix6pSgRsdGntt1oEL8wHVFGERZ7+HgWb\naCDTB4/0WU7ZFNK6WFwt2eTr5vvvKGHtQienyYmzWtw4HrB3RQCT/JurnWhQW5do\nSLQhSVTHHaq3XB8a/viU+Dr27bP9YAoblSlAYipg3MpTX+e9rp16k/EdMqEEe/bv\nOIs8WRMCgYEAzftsr6WQsMFN4hw2YaGjs7A7mKsd7+QHy2jt2UbaFixj0XsRSl9M\nTGlIPMj2Fxo5Wzn7W7RejOnANpqtwmfromoQ9DYz8NN81R0YR+qrxj+zpDwHHow3\nQvF9Aiar40TmfM671vTD9JOTr+VdunZLfkjQz6cpKSIQj+BxzPEDkSI=\n-----END RSA PRIVATE KEY-----\n",
+        "port": 22
+    }
+}
+{
+    "name": "a simple job to perform one action",
+    "description": "Perform a simple shell command on specific nodes to understand the fundamentals of Courier jobs",
+    "scheduleRule": "immediate",
+    "exceptionRules": [],
+    "target": {
+      "executionType": "sequential",
+      "groups":[
+        {
+          "timeoutSeconds": 240,
+          "batchSize": {},
+          "distributionMethod": "batching",
+          "successCriteria": [
+            {
+              "numRuns": { "type": "percent", "value": 100 },
+              "status": "success"
+            }
+          ],
+          "nodeListType":"nodes",
+          "nodeIdentifiers":[
+            "7cc1ff52-a2ec-4d93-be6f-45679f764677"
+          ]
+        }
+      ]
+    },
+    "actions": {
+      "accessMode": "agent",
+      "steps":
+      [
+        {
+          "name": "step to sleep",
+          "interpreter": {
+            "skill": {
+              "minVersion": "1.0.0"
+            },
+            "name": "chef-platform/shell-interpreter"
+          },
+          "command": {
+            "linux": [
+              "sleep 10"
+            ],
+            "windows": [
+              "timeout 10"
+            ]
+          },
+          "inputs": {},
+          "expectedInputs": { },
+          "outputFieldRules": {},
+          "retryCount": 2,
+          "failureBehavior": {
+            "action": "retryThenFail",
+            "retryBackoffStrategy": {
+              "type": "linear",
+              "delaySeconds": 1,
+              "arguments": [1,3,5]
+            }
+          },
+          "limits": {},
+          "conditions": []
+        }
+      ]
+    }
+  }
+  
